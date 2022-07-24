@@ -1,6 +1,8 @@
 package com.example.demo.Controllers;
 
+import com.example.demo.Repositories.BooksRepository;
 import com.example.demo.Repositories.EmployeesRepository;
+import com.example.demo.entities.Books;
 import com.example.demo.entities.Employees;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -10,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
-import java.util.Optional;
 @org.springframework.stereotype.Controller
 public class StudentController {
     @Autowired
@@ -45,10 +46,5 @@ public class StudentController {
     public String editEmployee(@PathVariable("id") int id, Model model){
         model.addAttribute("employee",new Employees());
         return "editemployee";
-    }
-
-    @GetMapping("/about")
-    public String openAboutUs(){
-        return "about";
     }
 }
