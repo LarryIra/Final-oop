@@ -47,4 +47,8 @@ public class StudentController {
         model.addAttribute("employee",new Employees());
         return "editemployee";
     }
+    @GetMapping("/about")
+    public String openAboutUs(){
+        return "about";
+    }
 }
